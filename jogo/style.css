@@ -1,0 +1,270 @@
+* {
+  margin: 0;
+    padding: 0;
+  box-sizing: border-box;
+}
+
+*:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  font-size: 100%;
+  line-height: 1.5;
+  font-family: 'Orbitron', sans-serif;
+  color: #fff;
+}
+
+.header {
+  width: 100%;
+  
+}
+
+/*____index.html____ */
+/**______________________________MENU_______________________________*/
+.menu {
+  background-image: url(imgFundo.png);
+}
+a:link 
+{ 
+ text-decoration:none; 
+} 
+.menu ul li {
+  display: inline-block;
+  font-size: 20px;
+}
+.menu ul li a {
+  display: block;
+  color: #FFFFFF;
+  padding: 30px 10px;
+}
+@media (max-width:576px){
+  nav{
+      width: 100%;
+  }
+}
+/*______________________________TABULEIRO_____________________________*/
+#fundo-externo {
+  overflow: hidden; /* para que não tenha rolagem se a imagem de fundo for maior que a tela */
+  width: 100%;
+  height: 100%;
+  position: relative; /* criamos um contexto para posicionamento */
+}
+
+.example {
+  width: 100%;
+  max-width: 1200px;
+  height: 700px;
+  margin: 0 auto;
+}
+
+h1{
+  color: #ffffff;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.main {
+  display: flex;
+  height: 100%;
+  font-size: 2rem;
+
+  position: absolute;
+    top: 0em;
+    left: 50%;
+    width: 560px;
+    padding: 20px;
+    margin-left: -300px; /* por causa do posicionamento absoluto temos que usar margem negativa para centralizar o site */
+}
+
+.jogo-da-memoria {
+  width: 500px;
+  height: 500px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  perspective: 1000px;
+}
+
+.cartoes{
+  width: calc(25% - 10px);
+  height: calc(33.333% - 10px);
+  margin: 5px;
+  position: relative;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform .5s;
+  box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+  
+}
+
+.cartoes:active {
+  transform: scale(0.97); /*ao clicar, ele mexe para trás e pra frente*/
+  transition: transform .2s;
+}
+
+.cartoes.flip {
+  transform: rotateY(180deg);
+}
+
+.front-face,
+.back-face {
+  width: 100%;
+  height: 100%;
+  padding: 3px;
+  position: absolute;
+  border-radius: 8px;
+  background: red;
+  backface-visibility: visible;
+}
+
+.front-face {
+  transform: rotateY(180deg);
+  border-radius: 8px;
+  background: blue;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/*____________________________CRONÔMETRO_____________________________*/
+
+  .crono{
+  font-family: monospace;
+  font-size: 1em;
+  padding-top: 1em;
+  text-align: center;
+ 
+  }
+
+  #play{
+    cursor: pointer;
+    font-family:Verdana;
+    font-weight:bold;
+    font-size:13px;
+    padding:6px 10px;
+    color: blue;
+    
+  }
+
+  #pause{
+    cursor: pointer;
+    font-family:Verdana;
+    font-weight:bold;
+    font-size:13px;
+    padding:6px 10px;
+    color: black;
+  }
+
+  #recorde{
+    cursor: pointer;
+    font-family:Verdana;
+    font-weight:bold;
+    font-size:13px;
+    padding:6px 10px;
+    color: green;
+  }
+
+  #reset{
+    cursor: pointer;
+    font-family:Verdana;
+    font-weight:bold;
+    font-size:13px;
+    padding:6px 10px;
+    color: red;
+  }
+
+  .painelMp3{
+    float: right;
+
+  }
+
+/*____home.html____ */  
+
+.box1{
+  position:absolute;
+  top:5%;
+  right:10px;
+  width:70%;
+  height:70%;
+  
+  padding: 50px;
+}
+.content1{
+  min-width: 100%;
+  height: 98%;
+  position: absolute;
+  margin-left:-101%;
+  -webkit-transition: margin-left .8s ease-in-out;
+  -moz-transition: margin-left .8s ease-in-out;
+  -o-transition: margin-left .8s ease-in-out;
+  transition: margin-left .8s ease-in-out;
+  
+}
+.content1:target{
+  margin-left:0;
+}
+#home1{
+  margin-left:0;
+  background-image: url(fundohome.png);
+}
+#home1:target ~ header #link-home a,
+#company:target ~ header #link-company a,
+#service:target ~ header #link-service a,
+#contact:target ~ header #link-contact a{
+  background:black;
+  color: #fff;
+}
+
+
+/*____contato.html____ */
+.box{
+  position: absolute;
+  float: left;
+  top: 5%;
+  width: 50%;
+  right: 10px;
+  height: 20%;
+  padding: 50px;
+  background: black;
+  color: #fff;
+
+    /*position:absolute;
+    top:5%;
+    right:10px;
+    width:50%;
+    height:70%;
+    background:black;
+    padding: 50px;*/
+}
+.content2{
+  min-width: 100%;
+  height: 98%;
+  position: absolute;
+  margin-left:-101%;
+  -webkit-transition: margin-left .8s ease-in-out;
+  -moz-transition: margin-left .8s ease-in-out;
+  -o-transition: margin-left .8s ease-in-out;
+  transition: margin-left .8s ease-in-out;
+  
+}
+.content2:target{
+  margin-left:0;
+}
+#home{
+  margin-left:0;
+  background-image: url(fundohome.png)
+}
+#home:target ~ header #link-home a,
+#company:target ~ header #link-company a,
+#service:target ~ header #link-service a,
+#contact:target ~ header #link-contact a{
+  background:black;
+  color: #fff;
+}
